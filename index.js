@@ -6,13 +6,6 @@ var request = require('request');
 var querystring = require('querystring');
 var app = express();
 
-// Twilio Credentials
-var accountSid = process.env.TWILIO_ACCOUNT_SID;
-var authToken = process.env.TWILIO_AUTH_TOKEN;
-
-//require the Twilio module and create a REST client
-var client = require('twilio')(accountSid, authToken);
-
 app.set('port', (process.env.PORT || 3000));
 
 app.use(bodyParser.json()); // for parsing application/json
