@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 
 // respond with "hello world" when a GET request is made to the homepage
 app.post('/', function(req, res) {
-    //console.log(req.body);
+    //console.(req.body);
 
     res.set('Content-Type', 'text/plain');
     query = querystring.stringify({
@@ -32,7 +32,7 @@ app.post('/', function(req, res) {
     request
         .get('http://whoismyrepresentative.com/getall_mems.php?' + query)
         .on('error', function(err) {
-            console.log('Error: ' + error);
+            console.error('Error: ' + error);
             res.sendStatus(400);
         })
         .on('response', function(response) {
@@ -68,7 +68,7 @@ function formatReply(results) {
         reply = reply.concat(personString + '\n');
     });
 
-    console.log(reply);
+    //console.log(reply);
     return reply;
 }
 
